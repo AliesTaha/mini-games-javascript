@@ -29,7 +29,7 @@ createBooking('LH123', 5);
 
 createBooking('LH123', undefined, 1000);
 */
-
+/*
 ///////////////////////////////////////
 // How Passing Arguments Works: Values vs. Reference
 const flight = 'LH234';
@@ -63,37 +63,35 @@ const newPassport = function (person) {
 
 newPassport(jonas);
 checkIn(flight, jonas);
+*/
 
-/*
 ///////////////////////////////////////
 // Functions Accepting Callback Functions
-const oneWord = function (str) {
-  return str.replace(/ /g, '').toLowerCase();
+/*
+const oneword=function(str){
+    return str.replace(/ /g, '').toLowerCase();
 };
 
-const upperFirstWord = function (str) {
-  const [first, ...others] = str.split(' ');
-  return [first.toUpperCase(), ...others].join(' ');
+const upperFirstWord = function (str){
+    const [first, ...others]= str.split(' ');
+    return [first.toUpperCase(), ...others].join(' ');
 };
 
-// Higher-order function
-const transformer = function (str, fn) {
-  console.log(`Original string: ${str}`);
-  console.log(`Transformed string: ${fn(str)}`);
+const transformer = function(str, fn){
+    console.log(str);
+    console.log(`Transformed string ${fn(str)}`);
 
-  console.log(`Transformed by: ${fn.name}`);
-};
+    console.log(`Transformed by: ${fn.name}`);
+}
 
-transformer('JavaScript is the best!', upperFirstWord);
-transformer('JavaScript is the best!', oneWord);
+transformer('ja is the best', upperFirstWord)
 
-// JS uses callbacks all the time
-const high5 = function () {
-  console.log('👋');
-};
-document.body.addEventListener('click', high5);
-['Jonas', 'Martha', 'Adam'].forEach(high5);
+const high3= function(){
+    console.log('Hello');
+}
 
+document.body.addEventListener('mousemove', high3);
+document.body.addEventListener('')
 
 ///////////////////////////////////////
 // Functions Returning Functions
@@ -113,7 +111,6 @@ greet('Hello')('Jonas');
 const greetArr = greeting => name => console.log(`${greeting} ${name}`);
 
 greetArr('Hi')('Jonas');
-
 
 ///////////////////////////////////////
 // The call and apply Methods
@@ -166,6 +163,7 @@ console.log(swiss);
 
 book.call(swiss, ...flightData);
 
+*/
 ///////////////////////////////////////
 // The bind Method
 // book.call(eurowings, 23, 'Sarah Williams');
@@ -212,7 +210,7 @@ const addTaxRate = function (rate) {
 const addVAT2 = addTaxRate(0.23);
 console.log(addVAT2(100));
 console.log(addVAT2(23));
-*/
+
 ///////////////////////////////////////
 // Coding Challenge #1
 
@@ -246,6 +244,22 @@ BONUS TEST DATA 2: [1, 5, 3, 9, 6, 1]
 
 GOOD LUCK 😀
 */
+const poll = {
+    question: 'What is your favourite programming language?',
+    options: ['0: JavaScript', '1: Python', '2: Rust', '3: C++'],
+    // This generates [0, 0, 0, 0]. More in the next section 😃
+    answers: new Array(4).fill(0),
+    registerNewAnswer(){
+        const answer=Number(
+            prompt(
+                `${this.question}\n${this.options.join('\n')}\n(Write option number)`
+            )
+        )
+    }
+};
+
+
+
 
 /*
 const poll = {
@@ -292,7 +306,7 @@ poll.displayResults.call({ answers: [1, 5, 3, 9, 6, 1] });
 // [5, 2, 3]
 // [1, 5, 3, 9, 6, 1]
 
-
+*/
 ///////////////////////////////////////
 // Immediately Invoked Function Expressions (IIFE)
 const runOnce = function () {
@@ -337,7 +351,7 @@ booker();
 
 console.dir(booker);
 
-
+/*
 ///////////////////////////////////////
 // More Closure Examples
 // Example 1
